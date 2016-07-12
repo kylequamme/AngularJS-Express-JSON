@@ -17,15 +17,10 @@ app.controller('SportController', function($scope, $http){
 
   $scope.generatePeople = function generatePeople(){
     randomArchery = genRanNum('archery');
-    console.log(randomArchery);
     randomCanoe = genRanNum('canoe');
-    console.log(randomCanoe);
     randomJudo = genRanNum('judo');
-    console.log(randomJudo);
     randomTableten = genRanNum('tableten');
-    console.log(randomTableten);
     randomTaekwondo = genRanNum('taekwondo');
-    console.log(randomTaekwondo);
     $scope.chosenPeople =[archery[randomArchery], canoe[randomCanoe],
      judo[randomJudo], tableten[randomTableten], taekwondo[randomTaekwondo]];
   }
@@ -37,27 +32,22 @@ app.controller('SportController', function($scope, $http){
     switch (currSport) {
       case 'archery':
         archery =response.data;
-        // console.log('archery', archery);
         getSport('canoe');
         break;
       case 'canoe':
         canoe =response.data;
-        // console.log('canoe', canoe);
         getSport('judo');
         break;
       case 'judo':
         judo = response.data;
-        // console.log('judo',judo);
         getSport('tableten');
         break;
       case 'tableten':
         tableten = response.data;
-        // console.log('tableten',tableten);
         getSport('taekwondo');
         break;
       case 'taekwondo':
         taekwondo = response.data;
-        // console.log('taekwondo',taekwondo);
         break;
     }
   }
@@ -83,7 +73,6 @@ app.controller('SportController', function($scope, $http){
         break;
     }
     currSport = sport;
-    // console.log(Math.floor((Math.random() * sport.length) + 1));
     return Math.floor(Math.random() * sportArray.length);
   }
 });
