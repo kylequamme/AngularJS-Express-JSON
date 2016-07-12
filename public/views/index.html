@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="olympicApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Olympic Marketing Campaign Picker</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="js/client.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="SportController">
+    <header>
+      <h1>Olympic Marketing Campaign Picker</h1>
+    </header>
+    <main>
+      <span class="buttonLine"><button class="btn btn-hover" ng-click="generatePeople()">Generate</button></span>
+      <br />
+      <div class="athletes" ng-repeat="people in chosenPeople track by $index">
+        <h1>{{people.name}}</h1>
+        <h2>{{people.origin}}</h2>
+      </div>
+    </main>
+
+  </body>
+</html>
